@@ -1,0 +1,11 @@
+{% extends 'forum/base.html' %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block content %}
+    <h1>Homepage</h1>
+    <a href="{% url 'accounts:login' %}">login</a>
+    <a href="{% url 'accounts:signup' %}">signup</a>
+    <a href="{% url 'accounts:logout' %}">logout</a>
+    
+{% endblock content %}

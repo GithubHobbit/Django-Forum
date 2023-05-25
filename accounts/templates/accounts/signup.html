@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}
+    SIGN_UP
+{% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <div>{{form.username.label_tag}}</div>
+        <div>{{form.username}}<div>
+        <div>{{form.username.errors.0}}</div>
+
+        <div>{{form.email.label_tag}}</div>
+        <div>{{form.email}}<div>
+        <div>{{form.email.errors.0}}</div>
+
+        <div>{{form.password1.label_tag}}</div>
+        <div>{{form.password1}}<div>
+        <div>{{form.password1.errors.0}}</div>
+
+        <div>{{form.password2.label_tag}}</div>
+        <div>{{form.password2}}<div>
+        <div>{{form.password2.errors.0}}</div>
+
+        <input type="submit" value="Зарегистрироваться" />
+    </form>
+{% endblock content %}
