@@ -1,0 +1,41 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+
+{% block title %}TOPICS{% endblock title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'forum/css/topics.css' %}"/>
+    <div class="topics-content">
+        <table class="pure-table pure-table-horizontal" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="head_topic">Тема</th>
+                    <th class="head_author">Автор</th>
+                    <th class="head_msg">Ответы</th>
+                    <th class="head_lat_msg">Последний ответ</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for topic in topics %}
+                <tr>
+                    <td class="topic">
+                        <a href="" class="title">{{topic.title}}</a>
+                        <div class="topic-date">{{topic.creation_date|date:"d.m.Y"}}</div>
+                    </td>
+                    <td class="author">{{topic.author}}</td>
+                    <td class="msg-cnt">{{topic.msg_cnt}}</td>
+                    <td class="last-msg">
+                        {% if topic.last_msg_date %}
+                        <div class="last-msg-row">
+                            <a href="" class="last-msg-user">{{topic.last_msg_user}}</a>
+                            <div class="last-msg-date">{{topic.last_msg_date|date:"d.m.Y"}}</div>
+                            <a href="" class="go">icon</a>
+                        </div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+{% endblock content %}

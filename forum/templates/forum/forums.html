@@ -1,9 +1,6 @@
 {% extends 'forum/base.html' %}
 {% load static %}
 
-{% block style %}
-
-{% endblock style %}
 {% block title %}HOME{% endblock title %}
 
 {% block content %}
@@ -22,7 +19,7 @@
                 {% for forum in forums %}
                 <tr>
                     <td class="forum">
-                        <a href="" class="title">{{forum.title}}</a>
+                        <a href="{% url 'forum:topics' pk=forum.id %}" class="title">{{forum.title}}</a>
                         <div class="description">{{forum.description}}</div>
                     </td>
                     <td class="topic-cnt">{{forum.topic_cnt}}</td>

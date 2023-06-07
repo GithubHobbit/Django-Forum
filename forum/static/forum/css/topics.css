@@ -1,0 +1,47 @@
+.topics-content {
+    padding: 1rem 3rem;
+}
+
+table {
+    width: 100%;
+}
+
+.title {
+    display: inline-block;
+    color: #3366CC;
+    margin-bottom: 0.2rem;
+}
+
+.topic-date {
+    font-size: 0.9rem;
+
+}
+
+
+.author, .msg-cnt {
+    width: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.last-msg-topic {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+
+.last-msg {
+    width: 1px;
+}
+
+.last-msg-row {
+    display: flex;
+}
+
+.last-msg-user {
+    margin-right: 0.4rem;
+    color: #000066;
+}
+
+.last-msg-date {
+    margin-right: 0.2rem;
+}

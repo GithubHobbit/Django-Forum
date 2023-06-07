@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'forum'
 urlpatterns = [
-    path('', views.homePageView, name='home'),
+    path('', views.forumsPageView, name='home'),
+    path('forums/<pk>/topics', views.topicsPageView, name="topics"),
 ]
 

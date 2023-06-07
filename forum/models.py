@@ -12,6 +12,7 @@ class Topic(models.Model):
     title = models.CharField(max_length=60)
     description = models.CharField(max_length=200)
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    creation_date = models.DateTimeField(auto_now_add=True)
     forum = models.ForeignKey(Forum, on_delete=models.CASCADE)
 
     def __str__(self):
