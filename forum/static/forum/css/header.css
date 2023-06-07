@@ -1,0 +1,7 @@
+.header {
+    border-bottom: 2px dashed #aaa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}

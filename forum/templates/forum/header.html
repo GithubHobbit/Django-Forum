@@ -1,0 +1,31 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'forum/css/header.css' %}">
+<div class="header pure-menu pure-menu-horizontal">
+    <ul class="header-list pure-menu-list header-categories">
+        <li href="#" class="pure-menu-heading pure-menu-link">FORUM</li>
+        <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">LINK_1</a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">LINK_2</a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">LINK_3</a>
+        </li>
+    </ul>
+    <ul class="header-auth">
+        {% if user.is_authenticated %}
+        <li class="pure-menu-item">
+            <a href="{% url 'accounts:logout' %}" class="pure-menu-link">LOGOUT</a>
+        </li>
+        {% else %}
+        <li class="pure-menu-item">
+            <a href="{% url 'accounts:login' %}" class="pure-menu-link">LOGIN</a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="{% url 'accounts:signup' %}" class="pure-menu-link">SIGN_UP</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
