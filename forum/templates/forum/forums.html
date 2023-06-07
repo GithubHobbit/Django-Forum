@@ -1,0 +1,45 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+
+{% block style %}
+
+{% endblock style %}
+{% block title %}HOME{% endblock title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'forum/css/forums.css' %}"/>
+    <div class="forums-content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="head_forum">Форумы</th>
+                    <th class="head_theme">Темы</th>
+                    <th class="head_msg">Сообщения</th>
+                    <th class="head_lat_msg">Последние сообщения</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for forum in forums %}
+                <tr>
+                    <td class="forum">
+                        <a href="" class="title">{{forum.title}}</a>
+                        <div class="description">{{forum.description}}</div>
+                    </td>
+                    <td class="topic-cnt">{{forum.topic_cnt}}</td>
+                    <td class="msg-cnt">{{forum.msg_cnt}}</td>
+                    <td class="last-msg">
+                        {% if forum.last_msg_date %}
+                        <a href="" class="last-msg-topic">{{forum.last_msg_topic}}</a>
+                        <div class="last-msg-row">
+                            <a href="" class="last-msg-user">{{forum.last_msg_user}}</a>
+                            <div class="last-msg-date">{{forum.last_msg_date|date:"d.m.Y"}}</div>
+                            <a href="" class="go">icon</a>
+                        </div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+{% endblock content %}

@@ -1,0 +1,55 @@
+.forums-content {
+    padding: 0.6rem 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+thead th {
+    color: #666;
+    font-weight: normal;
+    text-align: left;
+}
+
+th, td {
+    padding: 0.8rem 0.5rem;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+}
+
+.topic-cnt, .msg-cnt {
+    width: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.forum .title {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.last-msg-topic {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+
+.last-msg-row {
+    display: flex;
+}
+
+.last-msg-topic, .last-msg-user {
+    color: #000066;
+}
+
+.last-msg-user {
+    margin-right: 0.4rem;
+}
+
+.last-msg-date {
+    margin-right: 0.2rem;
+}
