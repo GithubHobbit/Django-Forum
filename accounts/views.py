@@ -13,12 +13,8 @@ def signup(request):
 
     if request.method == 'POST':
         form = forms.RegistrationForm(request.POST)
-        print(form.errors)
-        print('---------')
-        print(form.non_field_errors)
         if form.is_valid():
             user = form.save()
-            # messages.success(request, f'Создан аккаунт {user.username}')
             return redirect('forum:home')
         else:
             return render(request, 'accounts/signup.html', {"form": form})

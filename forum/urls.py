@@ -5,6 +5,6 @@ from . import views
 app_name = 'forum'
 urlpatterns = [
     path('', views.forumsPageView, name='home'),
-    path('forums/<pk>/topics', views.topicsPageView, name="topics"),
+    path('forum/<pk>/topics', views.topicsPageView, name="topics"),
 ]
 
