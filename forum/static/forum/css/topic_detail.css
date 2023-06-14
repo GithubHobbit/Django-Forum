@@ -1,0 +1,47 @@
+.messages {
+    padding: 24px;
+}
+
+table {
+    width: 100%;
+}
+
+.username, .msg-num {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.username, .avatar {
+    border-right: 1px #bbb dotted;
+}
+
+.avatar, .content {
+    border-bottom: 1px #aaa solid;
+}
+
+.post-date {
+    text-align: start;
+}
+
+.avatar > img {
+    max-width: 100px;
+}
+
+.content {
+    vertical-align: top;
+}
+
+tr > * {
+    padding: 8px;
+}
+
+th {
+    background-color:antiquewhite;
+    color: #555;
+    font-weight: normal;
+}
+
+.username {
+    font-weight: bold;
+    text-decoration: underline;
+}

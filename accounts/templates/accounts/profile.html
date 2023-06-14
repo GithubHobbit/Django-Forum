@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content %}
+{% comment %} {% if user.avatar %}
+    <div>
+        {{user.avatar.url}}
+    
+    </div>
+{% endif %} {% endcomment %}
+<link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+<form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data">
+    <fieldset>
+        {% csrf_token %}
+        <legend>Профиль</legend>
+        <div class="username">
+            <label for="{{form.username.id_for_label}}">Логин</label>
+            {{form.username}}
+        </div>
+        <div class="email">
+            <label for="{{form.email.id_for_label}}">Почта</label>
+            {{form.email}}
+            <span>{{form.email.errors}}</span>
+        </div>
+        <div class="avatar">
+            <label for="{{form.avatar.id_for_label}}">Аватар</label>
+            {{form.avatar}}
+        </div>
+        <div class="realname">
+            <label for="{{form.realname.id_for_label}}">Настоящее имя</label>
+            {{form.realname}}
+        </div>
+        <button class="pure-button pure-button-primary" type="submit">Submit</button>
+    </fieldset>
+</form>
+{% endblock content %}

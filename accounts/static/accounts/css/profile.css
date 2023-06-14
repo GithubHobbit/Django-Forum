@@ -1,0 +1,13 @@
+form {
+    max-width: 300px;
+    margin: 24px auto 0;
+}
+
+fieldset > div > * {
+    display: block;
+    width: 100%;
+}
+
+fieldset > * {
+    margin-bottom: 8px;
+}

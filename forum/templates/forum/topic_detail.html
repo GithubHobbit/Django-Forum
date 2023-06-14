@@ -1,0 +1,32 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+
+{% block title %}TOPICS{% endblock title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'forum/css/topic_detail.css' %}"/>
+    <div class="messages">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+                {% for message in messages %}
+                    <tr>
+                        <th class="username">{{message.author.username}}</th>
+                        <th class="post-date">{{message.creation_date|date:"d.m.Y в H:i"}}</th>
+                        <th class="msg-num">Сообщение #{{forloop.counter}}</th>
+                    </tr>
+                    <tr>
+                        <td class="avatar">
+                            {% if topic.author.avatar %}
+                            <img src="{{MEDIA_URL}}{{message.author.avatar}}" alt="user_avatar">
+                            {% else %}
+                            <img src="{% static 'accounts/images/user_avatar.png' %}" alt="default_avatar">
+                            {% endif %}
+                        </td>
+                        <td class="content" colspan="2">{{message.text}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+{% endblock content %}

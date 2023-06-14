@@ -19,7 +19,7 @@
                 {% for topic in topics %}
                 <tr>
                     <td class="topic">
-                        <a href="" class="title">{{topic.title}}</a>
+                        <a href="{% url 'forum:topic' pk=topic.pk %}" class="title">{{topic.title}}</a>
                         <div class="topic-date">{{topic.creation_date|date:"d.m.Y"}}</div>
                     </td>
                     <td class="author">{{topic.author}}</td>

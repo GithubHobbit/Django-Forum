@@ -1,6 +1,6 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'forum/css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
 <div class="header pure-menu pure-menu-horizontal">
     <ul class="header-list pure-menu-list header-categories">
         <li href="#" class="pure-menu-heading pure-menu-link">FORUM</li>
@@ -16,6 +16,9 @@
     </ul>
     <ul class="header-auth">
         {% if user.is_authenticated %}
+        <li class="pure-menu-item">
+            <a href="{% url 'accounts:profile' %}" class="pure-menu-link">PROFILE</a>
+        </li>
         <li class="pure-menu-item">
             <a href="{% url 'accounts:logout' %}" class="pure-menu-link">LOGOUT</a>
         </li>

@@ -26,4 +26,11 @@ def topicsPageView(request, pk):
         .annotate(last_msg_user=Subquery(last_msg_subquery.values('author__username')))
 
     return render(request, 'forum/topics.html', {"topics": queryset})
+
+def topicDetailView(request, pk, page=1):
+    topic = Topic.objects.filter(id=pk).get()
+    messages = Message.objects.filter(topic__id=pk).order_by('creation_date')[(page-1) * 20 : page * 20]
+
+    return render(request, 'forum/topic_detail.html', {'topic': topic, 'messages': messages})
+
 # Create your views here.
