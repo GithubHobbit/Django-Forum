@@ -3,10 +3,11 @@
 <link rel="stylesheet" href="{% static 'css/header.css' %}">
 <div class="header pure-menu pure-menu-horizontal">
     <ul class="header-list pure-menu-list header-categories">
-        <li href="#" class="pure-menu-heading pure-menu-link">FORUM</li>
         <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">LINK_1</a>
-        </li>
+            <a href="{% url 'forum:home' %}" class="pure-menu-heading pure-menu-link">FORUM</a>
+        <li class="pure-menu-item">
+        <li class="pure-menu-item">
+            <a href="{% url 'forum:favorite_topics' %}" class="pure-menu-link">FAVORITE_TOPICS</a> </li>
         <li class="pure-menu-item">
             <a href="#" class="pure-menu-link">LINK_2</a>
         </li>

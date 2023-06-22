@@ -40,10 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fontawesomefree',
 
     'accounts',
     'forum',
 ]
+
+DJANGO_ICONS = {
+    "ICONS": {
+        "go": {"name": "fa-solid fa-arrow-right"},
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

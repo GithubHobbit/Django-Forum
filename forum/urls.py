@@ -11,6 +11,7 @@ urlpatterns = [
     path('forum/<pk>/topics', views.topicsPageView, name="topics"),
     path('topic/<pk>/page', views.topicDetailView, name='topic', kwargs={'page': 1}),
     path('topic/<pk>/page/<int:page>', views.topicDetailView, name='topic'),
+    path('favorite_topics', views.favoriteMsgDetailView, name='favorite_topics'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

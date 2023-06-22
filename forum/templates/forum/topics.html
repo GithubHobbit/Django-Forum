@@ -4,6 +4,9 @@
 {% block title %}TOPICS{% endblock title %}
 
 {% block content %}
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'forum/css/topics.css' %}"/>
     <div class="topics-content">
         <table class="pure-table pure-table-horizontal" cellpadding="0" cellspacing="0">
@@ -19,7 +22,10 @@
                 {% for topic in topics %}
                 <tr>
                     <td class="topic">
-                        <a href="{% url 'forum:topic' pk=topic.pk %}" class="title">{{topic.title}}</a>
+                        <a href="{% url 'forum:topic' pk=topic.pk %}" class="title">
+                            {{topic.title}}
+                            {% if topic.user %}{% endif %}
+                        </a>
                         <div class="topic-date">{{topic.creation_date|date:"d.m.Y"}}</div>
                     </td>
                     <td class="author">{{topic.author}}</td>
@@ -29,7 +35,8 @@
                         <div class="last-msg-row">
                             <a href="" class="last-msg-user">{{topic.last_msg_user}}</a>
                             <div class="last-msg-date">{{topic.last_msg_date|date:"d.m.Y"}}</div>
-                            <a href="" class="go">icon</a>
+                            <a href="" class="go"><i class="fa-solid fa-arrow-right"></i></a>
+                            
                         </div>
                         {% endif %}
                     </td>
